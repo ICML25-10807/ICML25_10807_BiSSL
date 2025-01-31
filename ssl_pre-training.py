@@ -112,7 +112,6 @@ if __name__ == "__main__":
         + args.pretext_type
         + "_arch-"
         + args.arch
-        + f"_epochs{args.epochs}"
     )
 
     mod_local_path_bb = mod_local_path_prefix + "_bb.pth"
