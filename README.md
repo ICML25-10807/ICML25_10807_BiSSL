@@ -3,7 +3,7 @@ This repository holds the pytorch-implementation accompanying the paper on BiSSL
 ![](figs/bissl_pipeline.png)
 
 ## Pre-Trained Model Weights
-Per default, all model weights shall be stored in the *models*-folder. Pre-trained models used for the experiments in the paper are available for download [here](https://drive.google.com/drive/folders/1thTprOQpCYN1sh2AAHqhYaOo6Vz7-u96?usp=share_link).
+Per default, all model weights shall be stored in the *models*-folder. Pre-trained models used for the experiments in the paper are available for download [here](https://drive.google.com/drive/folders/120GUKlcpeh3rhKq9W_-6lSHCKWhQx7gB?usp=share_link).
 
 ## Overview of main training scripts:
 The script *config_default.py* contains an overview of all adjustable hyperparameters which can be parsed as arguments when executing the code from a terminal. The defaults are chosen corresponding to the hyper-parameters specified in the paper. 
