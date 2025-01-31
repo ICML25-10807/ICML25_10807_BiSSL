@@ -21,14 +21,14 @@ See *config_default.py* for additional arguments to parse.
 #### BiSSL (*bissl.py*)
 To conduct the linear downstream head warmup followed by BiSSL on the Oxford-IIIT Pets dataset, using the SimCLR self-supervised pre-trained model parameters as specified in the paper (i.e. achieved by running the line above), run:
 ```
-torchrun --nproc-per-node 4 bissl.py --d-dset 'pets' --p-pretext-type 'simclr' --p-pretrained-backbone-filename 'pretext_simclr_arch-resnet50_epochs500_bb.pth' --p-pretrained-proj-filename 'pretext_simclr_arch-resnet50_epochs500_proj.pth'
+torchrun --nproc-per-node 4 bissl.py --d-dset 'pets' --p-pretext-type 'simclr' --p-pretrained-backbone-filename 'pretext_simclr_arch-resnet50_bb.pth' --p-pretrained-proj-filename 'pretext_simclr_arch-resnet50_proj.pth'
 ```
 See *config_default.py* for additional arguments to parse.
 
 #### Fine-Tuning (*fine-tuning.py*)
 To conduct hyper-parameter optimization by conducting a random grid search over 100 combinations of learning rates and weight decays (as specified in the paper) used for fine-tuning a self-supervised pre-trained backbone (i.e. as obtained from running *ssl_pre-training.py*) on the pets dataset, run the following line
 ```
-torchrun --nproc-per-node 4 fine-tuning.py --dset 'pets' --pretrained-backbone-filename 'pretext_simclr_arch-resnet50_epochs500_bb.pth' --backbone-origin 'pretext' --num-runs 100 --use-hpo 1
+torchrun --nproc-per-node 4 fine-tuning.py --dset 'pets' --pretrained-backbone-filename 'pretext_simclr_arch-resnet50_bb.pth' --backbone-origin 'pretext' --num-runs 100 --use-hpo 1
 ```
 
 To conduct a similar run, but with a backbone obtained using BiSSL instead, run the following:
